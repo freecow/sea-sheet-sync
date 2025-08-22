@@ -30,7 +30,7 @@ SeaTable Excel 同步工具是一个智能化的数据同步解决方案，专�
 
 1. **克隆仓库**
 ```bash
-git clone https://github.com/your-repo/sea-sheet-sync.git
+git clone <your-repository-url>
 cd sea-sheet-sync
 ```
 
@@ -72,8 +72,7 @@ SEATABLE_SERVER_URL=https://cloud.seatable.cn
 DEFAULT_SEATABLE_API_TOKEN=your_default_token_here
 
 # 特定配置文件的 API Token（可选）
-MEMO_ANA2025_SEATABLE_API_TOKEN=your_2025_token_here
-MEMO_ANA2024_SEATABLE_API_TOKEN=your_2024_token_here
+CONFIG_NAME_SEATABLE_API_TOKEN=your_specific_token_here
 ```
 
 ### JSON 配置文件结构
@@ -102,30 +101,7 @@ MEMO_ANA2024_SEATABLE_API_TOKEN=your_2024_token_here
 
 ### 配置文件示例
 
-**memo-ana2025.json**:
-```json
-{
-  "menu_description": "2025年目标数据同步",
-  "date_version": "20250331",
-  "tables": [
-    {
-      "table_name": "A1-新签合同对比2025",
-      "excel_directory": "/Users/user/Documents/Excel",
-      "excel_file_name": "A1-2025年新签合同对比表",
-      "sheet_name": "新签合同对比表",
-      "relation_field": "销售组",
-      "relation_field_mappings": {
-        "销售组": "销售组"
-      },
-      "field_mappings": {
-        "截止目前签单额": "截止目前签单额",
-        "自有软件签单额": "自有软件签单额",
-        "年度合理目标": "年度合理目标"
-      }
-    }
-  ]
-}
-```
+参考 `sample.json.example` 文件，复制并重命名为你的配置文件名，然后修改其中的配置参数。
 
 ## 🎯 使用方法
 
@@ -139,18 +115,18 @@ python main-name-pro.py
 ```
 === SeaTable Excel 同步工具 ===
 可用的配置文件:
-1. 2025年目标数据同步 (memo-ana2025) (包含 11 个表格)
-2. 2024年目标数据同步 (memo-ana2024) (包含 16 个表格)
+1. 示例配置1 (config-1) (包含 X 个表格)
+2. 示例配置2 (config-2) (包含 Y 个表格)
 0. 退出
 ```
 
 ### 3. 选择同步表格
 选择配置文件后，程序直接显示该配置下的所有表格：
 ```
-配置文件: 2025年目标数据同步 (memo-ana2025)
+配置文件: 示例配置描述 (config-name)
 可用的表格:
-1. A1-新签合同对比2025
-2. A2-费用产出对比2025
+1. 示例表格1
+2. 示例表格2
 3. 同步所有表格
 0. 返回配置文件选择
 ```
@@ -196,8 +172,8 @@ sea-sheet-sync/
 ├── main-name-pro.py          # 主程序文件
 ├── requirements.txt          # Python 依赖
 ├── .env.example             # 环境变量示例
-├── memo-ana2025.json        # 2025年配置文件
-├── memo-ana2024.json        # 2024年配置文件
+├── sample.json.example      # 配置文件示例
+├── your-config.json         # 你的配置文件
 ├── build_standalone.py      # 独立构建脚本
 ├── build_windows_ci.py      # Windows CI 构建脚本
 ├── .github/workflows/build.yml  # GitHub Actions 配置

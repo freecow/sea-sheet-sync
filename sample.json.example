@@ -1,0 +1,35 @@
+{
+  "menu_description": "示例配置文件描述",
+  "date_version": "20240101",
+  "tables": [
+    {
+      "table_name": "示例表格名称",
+      "excel_directory": "/path/to/excel/directory",
+      "excel_file_name": "示例Excel文件名",
+      "sheet_name": "示例工作表名称",
+      "relation_field": "示例关联字段",
+      "relation_field_mappings": {
+        "示例关联字段": "示例Excel列名"
+      },
+      "field_mappings": {
+        "示例字段1": "示例Excel列1",
+        "示例字段2": "示例Excel列2",
+        "示例字段3": "示例Excel列3"
+      }
+    },
+    {
+      "table_name": "另一个示例表格",
+      "excel_directory": "/another/path/to/excel",
+      "excel_file_name": "另一个示例文件",
+      "sheet_name": "另一个工作表",
+      "relation_field": "另一个关联字段",
+      "relation_field_mappings": {
+        "另一个关联字段": "另一个Excel列"
+      },
+      "field_mappings": {
+        "示例数据字段": "示例数据列",
+        "示例统计字段": "示例统计列"
+      }
+    }
+  ]
+}
